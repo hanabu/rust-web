@@ -1,5 +1,5 @@
 [package]
-name = "yew-helloworld"
+name = "yew-counter"
 version = "0.1.0"
 authors = [ "Hanabusa Masahiro" ]
 edition = "2018"
