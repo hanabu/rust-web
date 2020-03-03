@@ -10,7 +10,7 @@ crate-type = ["cdylib"]
 [dependencies]
 wee_alloc = "0.4"
 wasm-bindgen = "^0.2"
-yew = "0.12"
+yew = { version = "0.13", features = ["web_sys"] }
 
 [profile.release]
 lto = true
