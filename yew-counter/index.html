@@ -2,7 +2,15 @@
 <html>
 <head>
 <title>Yew Counter</title>
-<script src="/pkg/bundle.js" defer></script>
 </head>
-<body></body>
+<body>
+<script type="module">
+import init, { run_app } from '/pkg/yew_counter.js';
+async function main() {
+   await init('/pkg/yew_counter_bg.wasm');
+   run_app();
+}
+main();
+</script>
+</body>
 </html>
