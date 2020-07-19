@@ -42,6 +42,10 @@ impl Component for App {
         true
     }
 
+    fn change(&mut self, _: Self::Properties) -> ShouldRender {
+        false
+    }
+
     fn view(&self) -> Html {
         html! {
             <>
