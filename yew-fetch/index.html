@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+<head>
+<title>Yew Fetch API sample</title>
+</head>
+<body>
+<script src="/pkg/yew_fetch.js"></script>
+<script>
+const { run_app } = wasm_bindgen;
+async function main() {
+   await wasm_bindgen('/pkg/yew_fetch_bg.wasm');
+   run_app();
+}
+main();
+</script>
+</body>
+</html>
