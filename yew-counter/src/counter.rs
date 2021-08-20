@@ -20,7 +20,7 @@ impl Component for App {
     }
 
     fn update(&mut self, msg: Self::Message) -> ShouldRender {
-        match (msg) {
+        match msg {
             Msg::Add => {
                 self.count += 1;
                 true

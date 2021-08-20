@@ -35,9 +35,9 @@ impl Component for App {
             }
             Msg::StartFetch => {
                 let path = if 0 == self.selected {
-                    "/static/red.json"
+                    "/red.json"
                 } else {
-                    "/static/green.json"
+                    "/green.json"
                 };
                 let req = fetch::Request::get(path)
                     .body(yew::format::Nothing)

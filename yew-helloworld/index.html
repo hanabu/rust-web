@@ -4,13 +4,6 @@
 <title>Yew HelloWorld</title>
 </head>
 <body>
-<script type="module">
-import init, { run_app } from '/pkg/yew_helloworld.js';
-async function main() {
-   await init('/pkg/yew_helloworld_bg.wasm');
-   run_app();
-}
-main();
-</script>
+<link data-trunk rel="rust" href="Cargo.toml" data-wasm-opt="z" />
 </body>
 </html>

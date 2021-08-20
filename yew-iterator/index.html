@@ -4,14 +4,6 @@
 <title>Yew Iterator</title>
 </head>
 <body>
-<script src="/pkg/yew_iterator.js"></script>
-<script>
-const { run_app } = wasm_bindgen;
-async function main() {
-   await wasm_bindgen('/pkg/yew_iterator_bg.wasm');
-   run_app();
-}
-main();
-</script>
+<link data-trunk rel="rust" href="Cargo.toml" data-wasm-opt="z" />
 </body>
 </html>

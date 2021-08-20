@@ -1,3 +1,3 @@
 #!/bin/sh
 
-sh ./build.sh && python3 -m http.server 1111
+trunk serve --release --port=1111

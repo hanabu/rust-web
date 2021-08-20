@@ -2,16 +2,10 @@
 <html>
 <head>
 <title>Yew Fetch API sample</title>
+<link data-trunk rel="copy-file" href="static/green.json" />
+<link data-trunk rel="copy-file" href="static/red.json" />
 </head>
 <body>
-<script src="/pkg/yew_fetch.js"></script>
-<script>
-const { run_app } = wasm_bindgen;
-async function main() {
-   await wasm_bindgen('/pkg/yew_fetch_bg.wasm');
-   run_app();
-}
-main();
-</script>
+<link data-trunk rel="rust" href="Cargo.toml" data-wasm-opt="z" />
 </body>
 </html>
