@@ -13,5 +13,4 @@ anyhow = "1"
 [profile.release]
 lto = true
 opt-level = "z"
-# panic = "abort"
-
+codegen-units = 1

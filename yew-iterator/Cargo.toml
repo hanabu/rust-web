@@ -12,5 +12,5 @@ yew = { version = "0.18", features = ["web_sys"] }
 [profile.release]
 lto = true
 opt-level = "z"
-# panic = "abort"
+codegen-units = 1
 
