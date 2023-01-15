@@ -1,5 +1,3 @@
-use yew::prelude::*;
-
 struct TableRow {
     id: i32,
     name: String,
@@ -12,11 +10,11 @@ pub struct App {
 
 pub enum Msg {}
 
-impl Component for App {
+impl yew::Component for App {
     type Message = Msg;
     type Properties = ();
 
-    fn create(_: Self::Properties, _: ComponentLink<Self>) -> Self {
+    fn create(_: &yew::Context<Self>) -> Self {
         App {
             table: vec![
                 TableRow {
@@ -38,15 +36,12 @@ impl Component for App {
         }
     }
 
-    fn update(&mut self, _: Self::Message) -> ShouldRender {
+    fn update(&mut self, _: &yew::Context<Self>, _: Self::Message) -> bool {
         true
     }
 
-    fn change(&mut self, _: Self::Properties) -> ShouldRender {
-        false
-    }
-
-    fn view(&self) -> Html {
+    fn view(&self, _: &yew::Context<Self>) -> yew::Html {
+        use yew::html;
         html! {
             <>
             <p>{ "Iterator Type 1" }</p>
@@ -54,7 +49,7 @@ impl Component for App {
             <tr><th>{ "ID" }</th><th>{ "name" }</th></tr>{
                 self.table.iter().map(|row| {
                     html! {<tr><td>{row.id}</td><td>{&row.name}</td></tr>}
-                }).collect::<Html>()
+                }).collect::<yew::Html>()
             }
             </table>
             <p>{ "Iterator Type 2" }</p>
@@ -69,7 +64,7 @@ impl Component for App {
             <table frame="box" rules="all">
             <tr><th>{ "ID" }</th><th>{ "admin name" }</th></tr>{
                 for self.table.iter().map(|row| {
-                    if( row.admin ){
+                    if row.admin {
                         html! {<tr><td>{row.id}</td><td>{&row.name}</td></tr>}
                     }else{
                         html! {}

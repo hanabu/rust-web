@@ -1,25 +1,19 @@
-use yew::prelude::*;
-
 pub struct App {
-    link: ComponentLink<Self>,
     count: i32,
 }
 pub enum Msg {
     Add,
 }
 
-impl Component for App {
+impl yew::Component for App {
     type Message = Msg;
     type Properties = ();
 
-    fn create(_: Self::Properties, link: ComponentLink<Self>) -> Self {
-        App {
-            link: link,
-            count: 0,
-        }
+    fn create(_: &yew::Context<Self>) -> Self {
+        App { count: 0 }
     }
 
-    fn update(&mut self, msg: Self::Message) -> ShouldRender {
+    fn update(&mut self, _: &yew::Context<Self>, msg: Self::Message) -> bool {
         match msg {
             Msg::Add => {
                 self.count += 1;
@@ -28,16 +22,13 @@ impl Component for App {
         }
     }
 
-    fn change(&mut self, _: Self::Properties) -> ShouldRender {
-        false
-    }
-
-    fn view(&self) -> Html {
+    fn view(&self, ctx: &yew::Context<Self>) -> yew::Html {
+        use yew::html;
         html! {
             <>
             <p>{"Count = "}{ self.count }
             <br />
-            <button onclick=self.link.callback(|_| Msg::Add) >{"+1"}</button>
+            <button onclick={ ctx.link().callback(|_| Msg::Add) }>{"+1"}</button>
             </p>
             </>
         }

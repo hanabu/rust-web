@@ -1,9 +1,5 @@
 mod helloworld;
 
-// Use wee_alloc to reduce WASM binary size
-#[global_allocator]
-static ALLOC: wee_alloc::WeeAlloc = wee_alloc::WeeAlloc::INIT;
-
 pub fn main() {
-    yew::start_app::<helloworld::App>();
+    yew::Renderer::<helloworld::App>::new().render();
 }

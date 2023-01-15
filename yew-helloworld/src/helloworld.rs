@@ -1,25 +1,20 @@
-use yew::prelude::*;
-
 pub struct App {}
 pub enum Msg {}
 
-impl Component for App {
+impl yew::Component for App {
     type Message = Msg;
     type Properties = ();
 
-    fn create(_: Self::Properties, _: ComponentLink<Self>) -> Self {
+    fn create(_: &yew::Context<Self>) -> Self {
         App {}
     }
 
-    fn update(&mut self, _: Self::Message) -> ShouldRender {
+    fn update(&mut self, _: &yew::Context<Self>, _: Self::Message) -> bool {
         true
     }
 
-    fn change(&mut self, _: Self::Properties) -> ShouldRender {
-        false
-    }
-
-    fn view(&self) -> Html {
+    fn view(&self, _: &yew::Context<Self>) -> yew::Html {
+        use yew::html;
         html! {
             <>
             <p>{ "Hello world!" }</p>

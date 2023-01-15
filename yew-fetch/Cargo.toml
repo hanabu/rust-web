@@ -5,10 +5,11 @@ authors = [ "Hanabusa Masahiro" ]
 edition = "2018"
 
 [dependencies]
-wee_alloc = "0.4"
-wasm-bindgen = "^0.2"
-yew = { version = "0.18", features = ["web_sys"] }
 anyhow = "1"
+gloo-console = "0.2.3"
+gloo-net = { version = "0.2.5", default-features = false, features = ["http", "json"] }
+wasm-bindgen = "=0.2.83"
+yew = { version = "0.20", features = ["csr"] }
 
 [profile.release]
 lto = true
