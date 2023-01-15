@@ -4,37 +4,31 @@
 
 We use `wasm-pack` to build WASM. Setup it with `cargo install`
 
-```
-cargo install wasm-pack
+```console
+$ cargo install wasm-pack
 ```
 
 ## Build
 
 Run [build.sh](build.sh).
 
-```
-build.sh
+```console
+$ build.sh
 
 [INFO]: Compiling to Wasm...
    Compiling ...
    Compiling yew-helloworld v0.1.0
     Finished release [optimized] target(s) in 1m 30s
-[INFO]: Optimizing wasm binaries with `wasm-opt`...
-[INFO]: Optional fields missing from Cargo.toml: 'description', 'repository', and 'license'. These are not necessary, but recommended
-[INFO]: :-) Done in 1m 30s
-[INFO]: :-) Your wasm pkg is ready to publish at yew-helloworld/pkg.
-
-main.js → pkg/bundle.js...
 
 ```
 
-You get `pkg/bundle.js` and `pkg/yew\_helloworld\_bg.wasm`
+You get `legacy/yew-helloworld.js` and `legacy/yew-helloworld\_bg.wasm`
 
 ## Run
 
-```
-run.sh
+```console
+$ run.sh
+Serving HTTP on 0.0.0.0 port 1111 (http://0.0.0.0:1111/) ...
 ```
 
 Then, open [http://localhost:1111](http://localhost:1111) on your browser.
-
