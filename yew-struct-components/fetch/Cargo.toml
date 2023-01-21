@@ -2,7 +2,8 @@
 name = "yew-fetch"
 version = "0.1.0"
 authors = [ "Hanabusa Masahiro" ]
-edition = "2018"
+edition = "2021"
+workspace = "../../"
 
 [dependencies]
 anyhow = "1"
@@ -11,7 +12,3 @@ gloo-net = { version = "0.2.5", default-features = false, features = ["http", "j
 wasm-bindgen = "=0.2.83"
 yew = { version = "0.20", features = ["csr"] }
 
-[profile.release]
-lto = true
-opt-level = "z"
-codegen-units = 1

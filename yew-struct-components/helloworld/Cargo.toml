@@ -1,15 +1,11 @@
 [package]
-name = "yew-iterator"
+name = "yew-helloworld"
 version = "0.1.0"
 authors = [ "Hanabusa Masahiro" ]
-edition = "2018"
+edition = "2021"
+workspace = "../../"
 
 [dependencies]
 wasm-bindgen = "=0.2.83"
 yew = { version = "0.20", features = ["csr"] }
-
-[profile.release]
-lto = true
-opt-level = "z"
-codegen-units = 1
 

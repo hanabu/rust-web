@@ -843,12 +843,36 @@ dependencies = [
 ]
 
 [[package]]
+name = "yew-counter"
+version = "0.1.0"
+dependencies = [
+ "wasm-bindgen",
+ "yew",
+]
+
+[[package]]
 name = "yew-fetch"
 version = "0.1.0"
 dependencies = [
  "anyhow",
  "gloo-console",
  "gloo-net",
+ "wasm-bindgen",
+ "yew",
+]
+
+[[package]]
+name = "yew-helloworld"
+version = "0.1.0"
+dependencies = [
+ "wasm-bindgen",
+ "yew",
+]
+
+[[package]]
+name = "yew-iterator"
+version = "0.1.0"
+dependencies = [
  "wasm-bindgen",
  "yew",
 ]
